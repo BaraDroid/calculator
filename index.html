@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="wrapper">
         <div class="main">
@@ -15,22 +17,22 @@
                 <h2 class="current_result">hello</h2>
             </div>
             <div class="number_btns">
-                <div class="one_key">7</div>
-                <div class="one_key">8</div>
-                <div class="one_key">9</div>
-                <div class="one_key">/</div>
-                <div class="one_key">4</div>
-                <div class="one_key">5</div>
-                <div class="one_key">6</div>
-                <div class="one_key">*</div>
-                <div class="one_key">1</div>
-                <div class="one_key">2</div>
-                <div class="one_key">3</div>
-                <div class="one_key">-</div>
-                <div class="one_key">CE</div>
-                <div class="one_key">0</div>
-                <div class="one_key">=</div>
-                <div class="one_key">+</div>
+                <div class="one_btn">7</div>
+                <div class="one_btn">8</div>
+                <div class="one_btn">9</div>
+                <div class="one_btn">/</div>
+                <div class="one_btn">4</div>
+                <div class="one_btn">5</div>
+                <div class="one_btn">6</div>
+                <div class="one_btn">*</div>
+                <div class="one_btn">1</div>
+                <div class="one_btn">2</div>
+                <div class="one_btn">3</div>
+                <div class="one_btn">-</div>
+                <div class="one_btn" id="clear_entry">CE</div>
+                <div class="one_btn">0</div>
+                <div class="one_btn">=</div>
+                <div class="one_btn">+</div>
             </div>
         </div>
         <div class="divider"></div>
@@ -39,4 +41,32 @@
         <!--<a target="_blank" href="https://icons8.com/icon/6gwMy8qlY6nG/calculator">Calculator</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>-->
     </div>
 </body>
+
 </html>
+
+
+<!-- TODO: dodelat responsiveness, az budu mit logiku hotovou -->
+<!-- TODO: dat si buttons jako konstanty -->
+<!-- TODO: Pri kazdym kliku se mi to napise do maly hello -->
+<!-- TODO: prevedu strings z maly hello do Number a vypocitam to, kdyz kliknu na = -->
+ <!-- TODO: dark mode 
+  3. Dunkle Themen mit leuchtenden Akzenten (Dark Mode)
+Dark Mode ist nach wie vor sehr beliebt und bietet einen modernen Look, der augenschonender sein kann.
+
+Hintergrund: Dunkles Grau bis Fast-Schwarz (#1E1E1E, #212121, #2D2D2D).
+
+Tasten (Normal): Etwas hellere Grautöne als der Hintergrund (#3A3A3A, #424242).
+
+Schriftfarbe (Zahlen / Operatoren): Hellgrau (#E0E0E0, #F5F5F5) oder reines Weiß.
+
+Akzentfarbe (Ergebnisse / "=" Taste): Hier kannst du mutiger sein mit leuchtenden Farben, die einen starken Kontrast zum dunklen Hintergrund bilden und gut sichtbar sind:
+
+Neon-Blau / Cyan: #00FFFF, #00BFFF
+
+Leuchtendes Grün: #00FF00, #39FF14
+
+Vivid Orange: #FF5722
+
+Elektrisches Violett: #9C27B0
+
+Vorteil: Modern, schick, energieeffizient (auf OLED-Displays), reduziert Augenbelastung. Akzentfarben knallen richtig.-->

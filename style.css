@@ -1,60 +1,98 @@
-* {
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-    text-decoration: none;
-    box-sizing: border-box;
+@font-face {
+    font-family: "Lato";
+    src: url(./fonts/Lato/Lato-Regular.ttf);
 }
 
-button {
-    cursor: pointer;
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+:root {
+    --main-bgr: #5f7c7a;
+    --display-bgr: #e5ede5;
+    --standard-btn: #e0e0e0;
+    --active-btn: #a7b3b5;
+    --special-btn: #e59669;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  font-family: "Lato";
+  background-color: var(--display-bgr);
 }
 
 .divider {
-    height: 90%;
-    width: 2px;
-    background-color: black;
+  height: 60%;
+  width: 2px;
+  background-color: black;
 }
 
 .wrapper {
-    height: 100dvh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+  height: 100dvh;
+  width: 100%;
+  max-width: 1220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
 }
 
 .main {
-    width: 68%;
+  width: 68%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 24px;
 }
 
 .examples {
-    width: 28%;
+  width: 28%;
 }
 
 .display {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
 }
 
-.one_key {
-    padding: 8px;
-    font-weight: bold;
-    border: 1px solid black;
-    border-radius: 8px;
-    height: 100%;
-    width: 100%;
-    display: grid;
-    place-items: center;
+.one_btn {
+  padding: 8px;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 8px;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background-color: var(--standard-btn);
+  box-shadow: var(--active-btn) 0px 7px 29px 0px;
+  cursor: pointer;
+}
+
+.one_btn:active {
+    background-color: var(--active-btn);
+}
+
+#clear_entry {
+    background-color: var(--special-btn);
+}
+
+#clear_entry:active {
+    background-color: #E88B57;
 }
 
 .number_btns {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    place-items: center;
-    gap: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  place-items: center;
+  gap: 10%;
 }
