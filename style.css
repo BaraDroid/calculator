@@ -49,6 +49,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  gap: 24px;
   padding: 24px;
 }
 
@@ -63,8 +64,20 @@ body {
   align-items: flex-end;
 }
 
+.current_example {
+    min-height: 2rem;
+}
+
+.current_result {
+    min-height: 3rem;
+}
+
+.current_display {
+    display: grid;
+    place-items: flex-end;
+}
+
 .one_btn {
-  padding: 8px;
   font-weight: bold;
   border: 1px solid black;
   border-radius: 8px;
@@ -94,5 +107,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   place-items: center;
-  gap: 10%;
+  gap: 4%;
+  height: 100%;
+  width: 100%;
 }
