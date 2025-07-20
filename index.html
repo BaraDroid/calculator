@@ -18,22 +18,22 @@
                 <h2 class="current_result current_display">hello</h2>
             </div>
             <div class="number_btns">
-                <div class="one_btn" id="digit7" onclick="writeOperation('7')">7</div>
-                <div class="one_btn" id="digit8" onclick="writeOperation('8')">8</div>
-                <div class="one_btn" id="digit9" onclick="writeOperation('9')">9</div>
-                <div class="one_btn" onclick="writeOperation('/')">/</div>
-                <div class="one_btn" id="digit4" onclick="writeOperation('4')">4</div>
-                <div class="one_btn" id="digit5" onclick="writeOperation('5')">5</div>
-                <div class="one_btn" id="digit6" onclick="writeOperation('6')">6</div>
-                <div class="one_btn" onclick="writeOperation('x')">x</div>
-                <div class="one_btn" id="digit1" onclick="writeOperation('1')">1</div>
-                <div class="one_btn" id="digit2" onclick="writeOperation('2')">2</div>
-                <div class="one_btn" id="digit3" onclick="writeOperation('3')">3</div>
-                <div class="one_btn" onclick="writeOperation('-')">-</div>
+                <div class="one_btn" id="digit7" onclick="writeNumber('7')">7</div>
+                <div class="one_btn" id="digit8" onclick="writeNumber('8')">8</div>
+                <div class="one_btn" id="digit9" onclick="writeNumber('9')">9</div>
+                <div class="one_btn" onclick="writeOperator('/')">/</div>
+                <div class="one_btn" id="digit4" onclick="writeNumber('4')">4</div>
+                <div class="one_btn" id="digit5" onclick="writeNumber('5')">5</div>
+                <div class="one_btn" id="digit6" onclick="writeNumber('6')">6</div>
+                <div class="one_btn" onclick="writeOperator('x')">x</div>
+                <div class="one_btn" id="digit1" onclick="writeNumber('1')">1</div>
+                <div class="one_btn" id="digit2" onclick="writeNumber('2')">2</div>
+                <div class="one_btn" id="digit3" onclick="writeNumber('3')">3</div>
+                <div class="one_btn" onclick="writeOperator('-')">-</div>
                 <div class="one_btn" id="clear_entry" onclick="clearEntry()">CE</div>
-                <div class="one_btn" id="digit0" onclick="writeOperation('0')">0</div>
+                <div class="one_btn" id="digit0" onclick="writeNumber('0')">0</div>
                 <div class="one_btn" onclick="processMathOperation()">=</div>
-                <div class="one_btn" onclick="writeOperation('+')">+</div>
+                <div class="one_btn" onclick="writeOperator('+')">+</div>
             </div>
         </div>
         <div class="divider"></div>
@@ -50,7 +50,7 @@
 <!-- TODO: dat si buttons jako konstanty -->
 <!-- TODO: Pri kazdym kliku se mi to napise do maly hello -->
 <!-- TODO: prevedu strings z maly hello do Number a vypocitam to, kdyz kliknu na = -->
- <!-- TODO: dark mode 
+<!-- TODO: dark mode 
   3. Dunkle Themen mit leuchtenden Akzenten (Dark Mode)
 Dark Mode ist nach wie vor sehr beliebt und bietet einen modernen Look, der augenschonender sein kann.
 
