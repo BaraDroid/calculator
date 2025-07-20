@@ -7,32 +7,33 @@
     <link rel="icon" type="image/x-icon" href="./favicon/icons8-calculator-16.png">
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
     <div class="wrapper">
         <div class="main">
             <div class="display">
-                <h3 class="current_example">maly hello</h3>
+                <h3 class="current_example" id="currentDisplay">maly hello</h3>
                 <h2 class="current_result">hello</h2>
             </div>
             <div class="number_btns">
-                <div class="one_btn">7</div>
-                <div class="one_btn">8</div>
-                <div class="one_btn">9</div>
-                <div class="one_btn">/</div>
-                <div class="one_btn">4</div>
-                <div class="one_btn">5</div>
-                <div class="one_btn">6</div>
-                <div class="one_btn">*</div>
-                <div class="one_btn">1</div>
-                <div class="one_btn">2</div>
-                <div class="one_btn">3</div>
-                <div class="one_btn">-</div>
-                <div class="one_btn" id="clear_entry">CE</div>
-                <div class="one_btn">0</div>
-                <div class="one_btn">=</div>
-                <div class="one_btn">+</div>
+                <div class="one_btn" id="digit7" onclick="writeOperation('7')">7</div>
+                <div class="one_btn" id="digit8" onclick="writeOperation('8')">8</div>
+                <div class="one_btn" id="digit9" onclick="writeOperation('9')">9</div>
+                <div class="one_btn" onclick="writeOperation('/')">/</div>
+                <div class="one_btn" id="digit4" onclick="writeOperation('4')">4</div>
+                <div class="one_btn" id="digit5" onclick="writeOperation('5')">5</div>
+                <div class="one_btn" id="digit6" onclick="writeOperation('6')">6</div>
+                <div class="one_btn" onclick="writeOperation('*')">*</div>
+                <div class="one_btn" id="digit1" onclick="writeOperation('1')">1</div>
+                <div class="one_btn" id="digit2" onclick="writeOperation('2')">2</div>
+                <div class="one_btn" id="digit3" onclick="writeOperation('3')">3</div>
+                <div class="one_btn" onclick="writeOperation('-')">-</div>
+                <div class="one_btn" id="clear_entry" onclick="clearEntry()">CE</div>
+                <div class="one_btn" id="digit0" onclick="writeOperation('0')">0</div>
+                <div class="one_btn" onclick="processMathOperation()">=</div>
+                <div class="one_btn" onclick="writeOperation('+')">+</div>
             </div>
         </div>
         <div class="divider"></div>
