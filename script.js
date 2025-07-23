@@ -1,7 +1,6 @@
 let currentDisplay = document.getElementById("currentDisplay");
 let accessMemory = [];
 let currentExample = [];
-let result = currentExample[0];
 
 function writeNumber(num) {
   currentDisplay.innerHTML += num;
@@ -29,46 +28,34 @@ function getNewNumber() {
   console.log(currentExample);
 }
 
-// function processMathOperation() {
-//   console.log("ich prozesse");
-//   getNewNumber();
-//   let result = currentExample[0]; //nebo ho initializovat na zacatku jako nulu a pricitat
-//   console.log("result in der forschleife", result);
-//   for (let i = 0; i < currentExample.length; i += 2) {
-//     let operator = currentExample[i]; //if i is lichy cislo - protoze zacinam nulou
-//     let nextNumber = currentExample[i + 1]; //if i ist sudy cislo
-
-//     switch (operator) {
-//       case "+":
-//         result += nextNumber;
-//         break;
-//       case "-":
-//         result -= nextNumber;
-//         break;
-//       case "x":
-//         result *= nextNumber;
-//         break;
-//       case "/":
-//         result /= nextNumber;
-//         break;
-//     }
-//     console.log("my result", result);
-//     //a pak jeste musim ten result napsat, kam patri
-//   }
-// }
-
 function processMathOperation() {
   getNewNumber();
-  for (let i = 0; i < currentExample.length; i++) {
-    const element = currentExample[i];
-    let result = currentExample[0];
+  let result = currentExample[0];
 
-    console.log("vysledek je ", result);
-    
-  }
-      if(currentExample[1] === '+') {
-      console.log("jsem drin!");
-      return result = result + currentExample[2]; //to nemuze fungovat, pze zatim neznam to druhy
+  // Schleife für die Berechnung (von links nach rechts)
+  // Starte bei Index 1 (dem ersten Operator)
+  // Springe in Schritten von 2 (Operator, dann Zahl)
+  for (let i = 1; i < currentExample.length; i += 2) {
+    let operator = currentExample[i];
+    let nextNumber = currentExample[i + 1]; // Holt die Zahl nach dem Operator
+
+    switch (operator) {
+      case "+":
+        result += nextNumber;
+        break;
+      case "-":
+        result -= nextNumber;
+        break;
+      case "x":
+        result *= nextNumber;
+        break;
+      case "/":
+        result /= nextNumber;
+        break;
     }
-    console.log("vysledek je ", result);
+  }
+  //tohle nefunguje, protoze je pak operator v accessMemory, coz nepotrebujem
+  // currentExample auf das Ergebnis setzen, um Kettenrechnungen zu ermöglichen
+  currentExample = [result];
+  accessMemory = [];
 }
