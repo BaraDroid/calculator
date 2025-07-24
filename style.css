@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "Lato";
-    src: url(./fonts/Lato/Lato-Regular.ttf);
+  font-family: "Lato";
+  src: url(./fonts/Lato/Lato-Regular.ttf);
 }
 
 * {
@@ -12,11 +12,12 @@
 }
 
 :root {
-    --main-bgr: #5f7c7a;
-    --display-bgr: #e5ede5;
-    --standard-btn: #e0e0e0;
-    --active-btn: #a7b3b5;
-    --special-btn: #e59669;
+  color-scheme: light dark;
+  --main-bgr: #5f7c7a;
+  --display-bgr: #e5ede5;
+  --standard-btn: #e0e0e0;
+  --active-btn: #a7b3b5;
+  --special-btn: #e59669;
 }
 
 body {
@@ -55,8 +56,9 @@ body {
 
 .examples {
   width: 28%;
-  height: 100%;
+  height: 60%;
   overflow-y: auto;
+  padding: 24px;
 }
 
 .display {
@@ -67,16 +69,16 @@ body {
 }
 
 .current_example {
-    min-height: 2rem;
+  min-height: 2rem;
 }
 
 .current_result {
-    min-height: 3rem;
+  min-height: 3rem;
 }
 
 .current_display {
-    display: grid;
-    place-items: flex-end;
+  display: grid;
+  place-items: flex-end;
 }
 
 .one_btn {
@@ -93,15 +95,15 @@ body {
 }
 
 .one_btn:active {
-    background-color: var(--active-btn);
+  background-color: var(--active-btn);
 }
 
 #clear_entry {
-    background-color: var(--special-btn);
+  background-color: var(--special-btn);
 }
 
 #clear_entry:active {
-    background-color: #E88B57;
+  background-color: #e88b57;
 }
 
 .number_btns {
@@ -125,6 +127,29 @@ body {
   }
   .main {
     width: 80%;
-    height: 80%;
+    height: 60%;
   }
+  .examples {
+    width: 100%;
+    height: 28%;
+    overflow-x: auto;
+    padding: 0 4rem;
+  }
+}
+
+/* ********DARK MODE********* */
+@media (prefers-color-scheme: dark) {
+  :root {
+  /* --main-bgr: #5f7c7a; */
+  --main-bgr: yellow;
+  --display-bgr: #e5ede5;
+  --standard-btn: #e0e0e0;
+  --active-btn: #a7b3b5;
+  --special-btn: #e59669;
+}
+
+body {
+  background-color: var(--main-bgr);
+}
+
 }

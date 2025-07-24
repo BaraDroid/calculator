@@ -12,9 +12,7 @@ function writeNumber(num) {
     clearEntry();
     operationDone = false;
     writeNumber(num);
-    saveLatestOperation();
   }
-  
 }
 
 function writeOperator(operator) {
@@ -25,6 +23,7 @@ function writeOperator(operator) {
 }
 
 function clearEntry() {
+  saveLatestOperation();
   currentDisplay.innerHTML = "";
   document.getElementById("mainResult").innerHTML = '';
   currentExample = [];
@@ -81,5 +80,9 @@ function writeResult(outcome) {
 }
 
 function saveLatestOperation() {
-
+  let myExample = document.getElementById("currentDisplay").innerHTML;
+  let myResult = document.getElementById("mainResult").innerHTML;
+  let pastResults = document.getElementById("pastResults");
+  console.log(myExample);
+  pastResults.innerHTML += `${myExample} = ${myResult}<br>`;
 }
