@@ -55,6 +55,8 @@ body {
 
 .examples {
   width: 28%;
+  height: 100%;
+  overflow-y: auto;
 }
 
 .display {
@@ -110,4 +112,19 @@ body {
   gap: 4%;
   height: 100%;
   width: 100%;
+}
+
+/* ********RESPONSIVE********* */
+@media (max-width: 535px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .divider {
+    height: 2px;
+    width: 80%;
+  }
+  .main {
+    width: 80%;
+    height: 80%;
+  }
 }

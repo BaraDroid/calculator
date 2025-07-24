@@ -16,7 +16,7 @@ function writeOperator(operator) {
 
 function clearEntry() {
   currentDisplay.innerHTML = "";
-  //tam, kde je hello, taky nebude nic
+  document.getElementById("mainResult").innerHTML = '';
   currentExample = [];
   accessMemory = [];
 }
@@ -32,30 +32,42 @@ function processMathOperation() {
   getNewNumber();
   let result = currentExample[0];
 
-  // Schleife für die Berechnung (von links nach rechts)
-  // Starte bei Index 1 (dem ersten Operator)
-  // Springe in Schritten von 2 (Operator, dann Zahl)
+  // Starte bei Index 1 (erster Operator)
+  // Springe in 2-Schritten (Operator, Zahl)
   for (let i = 1; i < currentExample.length; i += 2) {
     let operator = currentExample[i];
-    let nextNumber = currentExample[i + 1]; // Holt die Zahl nach dem Operator
-
-    switch (operator) {
-      case "+":
-        result += nextNumber;
-        break;
-      case "-":
-        result -= nextNumber;
-        break;
-      case "x":
-        result *= nextNumber;
-        break;
-      case "/":
-        result /= nextNumber;
-        break;
-    }
+    let nextNumber = currentExample[i + 1]; // die Zahl nach dem Operator
+    result = readOperator(result, operator, nextNumber);
   }
-  //tohle nefunguje, protoze je pak operator v accessMemory, coz nepotrebujem
-  // currentExample auf das Ergebnis setzen, um Kettenrechnungen zu ermöglichen
-  currentExample = [result];
+  writeResult(result);
   accessMemory = [];
+}
+
+function readOperator(currentResult, operator, nextNumber) {
+  let newResult = currentResult;
+  switch (operator) {
+    case "+":
+      newResult += nextNumber;
+      break;
+    case "-":
+      newResult -= nextNumber;
+      break;
+    case "x":
+      newResult *= nextNumber;
+      break;
+    case "/":
+      newResult /= nextNumber;
+      break;
+  }
+  return newResult;
+}
+
+function writeResult(outcome) {
+  let mainDisplay = document.getElementById("mainResult");
+  mainDisplay.innerHTML = '';
+  mainDisplay.innerHTML = outcome;
+}
+
+function saveLatestOperation() {
+  
 }
