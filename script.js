@@ -1,10 +1,20 @@
 let currentDisplay = document.getElementById("currentDisplay");
 let accessMemory = [];
 let currentExample = [];
+let operationDone = false;
 
 function writeNumber(num) {
-  currentDisplay.innerHTML += num;
-  accessMemory.push(num);
+  if(!operationDone) {
+    currentDisplay.innerHTML += num;
+    accessMemory.push(num);
+  }
+  else {
+    clearEntry();
+    operationDone = false;
+    writeNumber(num);
+    saveLatestOperation();
+  }
+  
 }
 
 function writeOperator(operator) {
@@ -41,6 +51,8 @@ function processMathOperation() {
   }
   writeResult(result);
   accessMemory = [];
+  operationDone = true;
+  console.log("operation done", operationDone);
 }
 
 function readOperator(currentResult, operator, nextNumber) {
@@ -69,5 +81,5 @@ function writeResult(outcome) {
 }
 
 function saveLatestOperation() {
-  
+
 }
