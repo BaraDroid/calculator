@@ -13,11 +13,20 @@
 
 :root {
   color-scheme: light dark;
-  --main-bgr: #5f7c7a;
   --display-bgr: #e5ede5;
   --standard-btn: #e0e0e0;
   --active-btn: #a7b3b5;
   --special-btn: #e59669;
+}
+
+/* ********DARK MODE********* */
+@media (prefers-color-scheme: dark) {
+  :root {
+  --display-bgr: #2D2D2D;
+  --standard-btn: #424242;
+  --active-btn: #a7b3b5;
+  --special-btn: #FF5722;
+}
 }
 
 body {
@@ -137,19 +146,3 @@ body {
   }
 }
 
-/* ********DARK MODE********* */
-@media (prefers-color-scheme: dark) {
-  :root {
-  /* --main-bgr: #5f7c7a; */
-  --main-bgr: yellow;
-  --display-bgr: #e5ede5;
-  --standard-btn: #e0e0e0;
-  --active-btn: #a7b3b5;
-  --special-btn: #e59669;
-}
-
-body {
-  background-color: var(--main-bgr);
-}
-
-}
