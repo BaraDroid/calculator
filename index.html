@@ -7,12 +7,18 @@
     <link rel="icon" type="image/x-icon" href="./images/favicon/icons8-calculator-16.png">
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="toggle-dark-mode.css">
     <script src="script.js" defer></script>
 </head>
 
 <body>
     <div class="wrapper">
-        <div class="floating_btn"></div>
+        <div class="floating_btn" onclick="toggleMode()">
+            <div class="controller">
+                <img class="modus_icon" id="sun" src="./images/dark-mode/sun-removebg.png" alt="sun icon">
+                <img class="modus_icon hidden" id="moon" src="./images/dark-mode/moon-removebg.png" alt="moon icon">
+            </div>
+        </div>
         <div class="main">
             <div class="display">
                 <h3 class="current_example current_display" id="currentDisplay"></h3>
@@ -56,3 +62,4 @@
 function toggleMode, kde se mi zmeni ta class a zaroven url k obrazku(chci mit regler)
 fertig -->
  <!-- TODO: Beschreibung von favicon zufügen -->
+  <!-- TODO: neue Beschreibung in GitHub, dass ich auch mein darkmodus alleine gemacht habe -->

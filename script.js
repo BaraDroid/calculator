@@ -3,6 +3,11 @@ let accessMemory = [];
 let currentExample = [];
 let operationDone = false;
 
+let moonImage = document.getElementById("moon");
+let sunImage = document.getElementById("sun");
+let lightmode = true;
+let darkmode = false;
+
 function writeNumber(num) {
   if(!operationDone) {
     currentDisplay.innerHTML += num;
@@ -40,7 +45,6 @@ function getNewNumber() {
 function processMathOperation() {
   getNewNumber();
   let result = currentExample[0];
-
   // Starte bei Index 1 (erster Operator)
   // Springe in 2-Schritten (Operator, Zahl)
   for (let i = 1; i < currentExample.length; i += 2) {
@@ -85,4 +89,19 @@ function saveLatestOperation() {
   let pastResults = document.getElementById("pastResults");
   console.log(myExample);
   pastResults.innerHTML += `${myExample} = ${myResult}<br>`;
+}
+
+function toggleMode() {
+  if(lightmode) { //zkontrolovat, jak je to v nastaveni a local storage
+    sunImage.classList.add("hidden");
+    moonImage.classList.remove("hidden");
+    lightmode = false;
+    darkmode = true;
+  }
+  else {
+    moonImage.classList.add("hidden");
+    sunImage.classList.remove("hidden");
+    lightmode = true;
+    darkmode = false;
+  }
 }
