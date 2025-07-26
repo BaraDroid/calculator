@@ -44,7 +44,6 @@ function writeOperator(operator) {
   getNewNumber();
   currentDisplay.innerHTML += operator;
   currentExample.push(operator);
-  console.log(currentExample);
 }
 
 function clearEntry() {
@@ -59,7 +58,6 @@ function getNewNumber() {
   let newNumber = accessMemory.join("");
   accessMemory = [];
   currentExample.push(parseInt(newNumber));
-  console.log(currentExample);
 }
 
 function processMathOperation() {
@@ -75,7 +73,6 @@ function processMathOperation() {
   writeResult(result);
   accessMemory = [];
   operationDone = true;
-  console.log("operation done", operationDone);
 }
 
 function readOperator(currentResult, operator, nextNumber) {
@@ -107,7 +104,6 @@ function saveLatestOperation() {
   let myExample = document.getElementById("currentDisplay").innerHTML;
   let myResult = document.getElementById("mainResult").innerHTML;
   let pastResults = document.getElementById("pastResults");
-  console.log(myExample);
   pastResults.innerHTML += `${myExample} = ${myResult}<br>`;
 }
 
