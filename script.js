@@ -7,8 +7,26 @@ let moonImage = document.getElementById("moon");
 let sunImage = document.getElementById("sun");
 let controller = document.querySelector(".controller");
 let myBody = document.querySelector("body");
-let lightmode = true;
-let darkmode = false;
+let lightmode;
+let darkmode;
+
+let preferedDarkSystem = window.matchMedia('(prefers-color-scheme: dark)').matches;
+let storedTheme = localStorage.getItem('theme');
+
+function checkTheme() {
+  if(preferedDarkSystem || storedTheme == 'dark') {
+    darkmode = true;
+    lightmode = false;
+    applyDarkMode();
+    setModeInLocalStorage('dark');
+  }
+  else {
+    darkmode = false;
+    lightmode = true;
+    applyLightMode;
+    setModeInLocalStorage('light');
+  }
+}
 
 function writeNumber(num) {
   if(!operationDone) {
@@ -94,22 +112,36 @@ function saveLatestOperation() {
 }
 
 function toggleMode() {
-  if(lightmode) { //zkontrolovat, jak je to v nastaveni a local storage
-    sunImage.classList.add("hidden");
+  if(lightmode) {
+    applyDarkMode();
+  }
+  else {
+    applyLightMode();
+  }
+}
+
+function applyDarkMode() {
+  sunImage.classList.add("hidden");
     moonImage.classList.remove("hidden");
     myBody.classList.remove("light_mode_active");
     myBody.classList.add("dark_mode_active");
     controller.classList.add("controller_dark_mode");
     lightmode = false;
     darkmode = true;
-  }
-  else {
-    moonImage.classList.add("hidden");
+    setModeInLocalStorage('dark');
+}
+
+function applyLightMode() {
+  moonImage.classList.add("hidden");
     sunImage.classList.remove("hidden");
     myBody.classList.add("light_mode_active");
     myBody.classList.remove("dark_mode_active");
     controller.classList.remove("controller_dark_mode");
     lightmode = true;
     darkmode = false;
-  }
+    setModeInLocalStorage('light');
+}
+
+function setModeInLocalStorage(theme) {
+  localStorage.setItem('theme', theme);
 }
