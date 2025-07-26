@@ -78,16 +78,16 @@ function processMathOperation() {
 function readOperator(currentResult, operator, nextNumber) {
   let newResult = currentResult;
   switch (operator) {
-    case "+":
+    case " + ":
       newResult += nextNumber;
       break;
-    case "-":
+    case " - ":
       newResult -= nextNumber;
       break;
-    case "x":
+    case " x ":
       newResult *= nextNumber;
       break;
-    case "/":
+    case " / ":
       newResult /= nextNumber;
       break;
   }

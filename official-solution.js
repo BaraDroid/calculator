@@ -3,3 +3,4 @@
 //das heißt auch, oben ist nur das eine letzte Zahl und operator, kann ich unendlich 
 //Nummern addieren (verrechnen)
 //nach Istgleich kann ich sofort anfangen zu schreiben ohne es leeren zu müssen
+//es ist immer ein leerzeichen zw.Zahl und Operator
